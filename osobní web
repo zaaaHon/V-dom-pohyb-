@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Honza Novosad — Vědomý pohyb</title>
+<meta name="description" content="Honza Novosad — průvodce vědomým pohybem, terapeut, lektor a facilitátor kruhové komunikace. Individuální i skupinová práce, adaptační kurzy pro školy." />
+<link rel="icon" href="data:,">
+<style>
+  :root{
+    --bg:#fbfbf9;
+    --card:#ffffff;
+    --muted:#6b6b6b;
+    --accent:#7a5a38; /* teplý přírodní tón */
+    --accent-2:#c9a57a;
+    --radius:14px;
+    --maxw:1000px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #222;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background: linear-gradient(180deg, var(--bg), #f6f4f1 60%);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.5;
+  }
+  .wrap{max-width:var(--maxw);margin:32px auto;padding:24px;}
+  header{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .logo{
+    width:64px;height:64px;border-radius:12px;background:
+    conic-gradient(from 180deg at 50% 50%, rgba(122,90,56,0.22), rgba(201,165,122,0.18));
+    display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);
+    font-size:18px;box-shadow:0 6px 18px rgba(20,20,20,0.06);border:1px solid rgba(0,0,0,0.03);
+  }
+  nav{display:flex;gap:12px;align-items:center;}
+  nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px;font-weight:600}
+  nav a:hover{background:rgba(0,0,0,0.03);color:#111}
+  .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:10px 14px;border-radius:12px;text-decoration:none}
+  main{margin-top:24px;display:grid;grid-template-columns:1fr;gap:28px}
+  .hero{
+    display:grid;grid-template-columns:1fr;gap:18px;padding:20px;border-radius:var(--radius);background:var(--card);
+    box-shadow:0 8px 30px rgba(18,18,18,0.05);
+  }
+  .hero .head{display:flex;gap:18px;align-items:center}
+  .hero .head .info{max-width:760px}
+  .title{font-size:26px;margin:0 0 6px 0}
+  .subtitle{margin:0;color:var(--muted);font-weight:600}
+  .tag{display:inline-block;margin-top:8px;padding:6px 10px;border-radius:10px;border:1px solid rgba(0,0,0,0.04);font-size:14px;background:linear-gradient(180deg,rgba(122,90,56,0.06),rgba(255,255,255,0.02))}
+  .hero-art{min-height:120px;border-radius:12px;background:
+    radial-gradient(circle at 20% 20%, rgba(122,90,56,0.08), transparent 12%),
+    linear-gradient(150deg,#fff 0%, #f7f4f2 100%);
+    display:flex;align-items:center;justify-content:center;padding:16px}
+  .quote{font-style:italic;color:#4d4d4d;margin-top:6px}
+  section.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(10,10,10,0.03)}
+  h2{margin:0 0 8px 0;font-size:18px;color:#111}
+  p.lead{color:var(--muted);margin:0 0 12px 0}
+  .grid{display:grid;gap:12px}
+  .cols-2{grid-template-columns:repeat(2,1fr)}
+  .service{padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(250,248,247,0.6),transparent);border:1px solid rgba(0,0,0,0.03)}
+  ul.clean{padding-left:18px;margin:8px 0 0 0}
+  li{margin:6px 0}
+  .contacts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .muted{color:var(--muted)}
+  footer{margin:24px 0 60px 0;text-align:center;color:var(--muted);font-size:14px}
+  .photo{
+    width:120px;height:120px;border-radius:12px;overflow:hidden;background:#efeae2;border:1px solid rgba(0,0,0,0.03);display:flex;align-items:center;justify-content:center;
+    font-size:14px;color:var(--muted)
+  }
+
+  /* mobile */
+  @media (max-width:720px){
+    .wrap{padding:16px;margin:18px auto}
+    .title{font-size:22px}
+    .hero .head{flex-direction:column;align-items:flex-start}
+    .cols-2{grid-template-columns:1fr}
+  }
+
+  /* small helpers */
+  .small{font-size:13px;color:var(--muted)}
+  .pill{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(0,0,0,0.03);font-weight:600}
+  .form-row{display:flex;flex-direction:column;gap:8px}
+  input,textarea{padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);font-size:15px}
+  button{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:700}
+  .note{font-size:13px;color:var(--muted)}
+  .hr{height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,0.03),transparent);margin:12px 0;border-radius:6px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>HN</div>
+        <div>
+          <div style="font-weight:800">Honza Novosad</div>
+          <div class="small muted">Vědomý pohyb · facilitace · průvodce</div>
+        </div>
+      </div>
+      <nav aria-label="Hlavní navigace">
+        <a href="#about">O mě</a>
+        <a href="#services">Co nabízím</a>
+        <a href="#projects">Projekty</a>
+        <a href="#experience">Zkušenosti</a>
+        <a class="cta" href="#contact">Kontakt</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero card" id="top">
+        <div class="head">
+          <div class="info">
+            <h1 class="title">Honza Novosad — Vědomý pohyb</h1>
+            <p class="subtitle">Pohybový mentor · terapeut · lektor · facilitátor kruhové komunikace</p>
+            <div class="tag">„Bezpečí v těle jako východisko pro změnu“</div>
+            <p class="quote">„Naše regenerační schopnost je spojena s hlubokým klidem.“ – Jaroslav Dušek</p>
+          </div>
+          <div style="margin-left:auto;display:flex;flex-direction:column;gap:10px;align-items:flex-end">
+            <div class="photo" id="photoArea">Fotka<br>sem</div>
+            <div class="small muted">Osobní, hravý a jednoduchý styl</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px">
+          <div class="pill">Průvodce v přítomnosti</div>
+          <div class="pill">Individuálně • Skupiny • Školy</div>
+          <div class="pill">Fascie • Dech • Rytmus</div>
+        </div>
+
+        <div style="margin-top:12px">
+          <p class="lead">Možná máš práci, vztah, zdravé tělo. A přesto něco chybí. Volání duše. Pocit, že se tělo říká: <strong>zastav se.</strong> Najdi bezpečí v sobě — a vrať se k sobě skrze tělo, přírodu a rytmus života.</p>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="card">
+        <h2>O mně</h2>
+        <p class="muted">Muž, syn svých rodičů, bratr své sestry, otec svých dcer — to jsem. Působím v rolích pohybového mentora, terapeuta, lektora, průvodce a facilitátora kruhové komunikace pro děti i dospělé. Nejsem vědec, jsem intuitivní průvodce.</p>
+        <div class="hr"></div>
+        <p>Jsem muž, který prošel životní přerodem od přežívání k prožívání, od výkonu k procesu. Skrze vnímání těla, dech a respekt k signálům těla vytvářím prostor bezpečí, z něhož může druhý růst. Základ mám v klasickém vysokoškolském vzdělání v oblasti sportu, ale osobní cesta mě dovedla k holistickému pojetí pohybu.</p>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="card">
+        <h2>Jak a s kým pracuji</h2>
+        <p class="lead">Pracuji bez dlouhodobých pevných plánů — zaměřuji se na přítomnost, objevování principů a podstaty pohybu, myšlení a prožívání ve vztahu k životu, vztahům a zdraví. Jako výchozí bod vnímám pocit bezpečí skrze nervový systém.</p>
+
+        <div class="grid cols-2" style="margin-top:12px">
+          <div class="service">
+            <strong>Vědomý pohyb</strong>
+            <ul class="clean">
+              <li>Individuální (nebo párový)</li>
+              <li>Malé skupiny (3–6 osob)</li>
+              <li>Týmový (kolektivní sporty)</li>
+            </ul>
+          </div>
+
+          <div class="service">
+            <strong>Facilitace kruhového sdílení</strong>
+            <ul class="clean">
+              <li>Mužsko-ženské kruhy</li>
+              <li>Kruhy pro dospívající muže (14–18 let)</li>
+              <li>Kruhy pro muže</li>
+            </ul>
+          </div>
+
+          <div class="service">
+            <strong>Adaptační programy pro školy</strong>
+            <p class="small muted">Průvodce programu adaptačních kurzů a škol v přírodě — pohyb, týmová dynamika, bezpečná komunikace.</p>
+          </div>
+
+          <div class="service">
+            <strong>Průvodcovství a podpora</strong>
+            <p class="small muted">Intuitivní přístup, mix metod podle potřeb klienta — principy z pohybu, dechu, fascií a práce s traumatem.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="card">
+        <h2>Projekty</h2>
+        <p class="muted">Výběr typických projektů, které vedu nebo spoluvytvářím.</p>
+
+        <div class="grid" style="margin-top:12px">
+          <div class="service">
+            <strong>Vědomý pohyb — individuální i skupinový</strong>
+            <p class="small">Práce se základními principy pohybu, nastavením nervového systému, dýcháním a rytmem.</p>
+          </div>
+          <div class="service">
+            <strong>Kruhové sdílení</strong>
+            <p class="small">Facilitace prostorů pro sdílení, naslouchání a bezpečné vyjádření. Práce s dospělými i dospívajícími.</p>
+          </div>
+          <div class="service">
+            <strong>Adaptační kurzy pro školy</strong>
+            <p class="small">Programy do škol v přírodě, které propojují pohyb, skupinovou dynamiku a reflexi.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="card">
+        <h2>Zkušenosti</h2>
+        <p class="muted">Vzdělání a životní zkušenost</p>
+        <p><strong>FTVS UK — obor TVS</strong></p>
+        <p>Skoro 20 let práce v oblasti osobních tréninků a sportovních tréninků (fotbal, moderní gymnastika, závodní aerobik, taneční sporty). Postupně se zaměření přesunulo od výkonu k prožívání skrze tělo. Tělo vnímám jako komplexní jednotu, kde hlavní tkání, se kterou pracuji, jsou <strong>fascie</strong> — nositelky pružnosti a propojení v těle.</p>
+        <p class="small muted">Metody: MovNat, funkční trénink, parkour, čchi kung, TČM, kruhová komunikace, kranio-sakrální biodynamika, šamanské přístupy (dle potřeby) — vždy kontextualizováno a filtrováno zdravým rozumem a bezpečím.</p>
+      </section>
+
+      <!-- MISSION -->
+      <section class="card">
+        <h2>Na čem mi záleží / moje poslání</h2>
+        <p>Nejdůležitější faktor ve spolupráci je <strong>důvěra</strong>. Vzájemná důvěra tvoří bezpečné prostředí, ve kterém se může dít to, co má. Lidé nesou odpovědnost za své prožívání; já vytvářím a držím bezpečný rámec, ve kterém se proces děje. Jsem průvodce objevování vlastní přirozenosti, harmonie skrze vědomý pohyb a synchronizaci rytmů těla a přírody.</p>
+      </section>
+
+      <!-- HOW I HELP -->
+      <section class="card">
+        <h2>Co dělám a jak umím pomoci</h2>
+        <p class="muted">Pracuji jako průvodce, rádce a našeptávač — přináším metody, nástroje a intuici.</p>
+        <p>Naslouchám projevu vašeho systému těla a mysli, nabízím nástroje (některé, které fungují mně, některé, které mne překvapily) a spolu hledáme optimální „koktejl“ pro daný okamžik. Věřím, že léčení vykoná tělo samo — mým úkolem je vytvořit k tomu bezpečný prostor.</p>
+        <p class="small">„Pohyb je jen jeden, existuje jen velké množství forem.“</p>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="card">
+        <h2>Kontakt</h2>
+        <p class="muted">Ozvěte se — rád si domluvím první nezávaznou konzultaci.</p>
+
+        <div class="contacts" style="margin-top:10px">
+          <div>
+            <div class="small">Email</div>
+            <div><a href="mailto:your-email@example.com">your-email@example.com</a></div>
+          </div>
+
+          <div>
+            <div class="small">Sociální sítě</div>
+            <div class="small">Facebook: (20+) — vložte prosím URL do kódu</div>
+          </div>
+
+          <div>
+            <div class="small">Telefon</div>
+            <div class="small muted">— pokud chceš, doplň číslo</div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <form id="contactForm" onsubmit="return handleForm(event)" class="form-row" aria-label="Kontaktní formulář">
+            <input id="name" placeholder="Jméno" required>
+            <input id="email" placeholder="Email" type="email" required>
+            <textarea id="message" placeholder="Krátká zpráva / co řešíte" rows="4" required></textarea>
+            <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+              <div class="note">Formulář používá mailto — otevře váš emailový klient.</div>
+              <button type="submit">Odeslat</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <strong>Honza Novosad</strong> — Vědomý pohyb</div>
+      <div class="muted">Najdi bezpečí v sobě. Najdi rytmus.</div>
+    </footer>
+  </div>
+
+<script>
+  // smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const href = a.getAttribute('href');
+      if(href.length>1){
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    });
+  });
+
+  // contact form opens mail client (mailto)
+  function handleForm(e){
+    e.preventDefault();
+    const n = document.getElementById('name').value.trim();
+    const em = document.getElementById('email').value.trim();
+    const msg = document.getElementById('message').value.trim();
+    const subject = encodeURIComponent('Kontakt z webu — ' + n);
+    const body = encodeURIComponent('Jméno: ' + n + '\\nEmail: ' + em + '\\n\\n' + msg);
+    const mailto = 'mailto:your-email@example.com?subject=' + subject + '&body=' + body;
+    window.location.href = mailto;
+    return false;
+  }
+
+  // helper: replace photo area if user adds an image (client-side only)
+  // To replace permanently, swap the placeholder in the HTML with an <img src="...">
+  (function(){
+    // if you want to programmatically set a preview image, uncomment and set url
+    // const url = ''; // e.g. 'images/me.jpg'
+    // if(url){ const p = document.getElementById('photoArea'); p.innerHTML = '<img src="'+url+'" alt="Foto" style="width:100%;height:100%;object-fit:cover">'}
+  })();
+</script>
+</body>
+</html>
